@@ -7,47 +7,62 @@ To implement univariate Linear Regression to fit a straight line using least squ
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Start
-2. Get the independent variable X and dependent variable Y.
-3. Calculate the mean of the X -values and the mean of the Y -values.
-4. Find the slope m of the line of best fit using the formula.
+1. Get the independent variable X and dependent variable Y.
+2. Calculate the mean of the X -values and the mean of the Y -values.
+3. Find the slope m of the line of best fit using the formula. 
 <img width="231" alt="image" src="https://user-images.githubusercontent.com/93026020/192078527-b3b5ee3e-992f-46c4-865b-3b7ce4ac54ad.png">
- 5. Compute the y -intercept of the line by using the formula:
+4. Compute the y -intercept of the line by using the formula:
 <img width="148" alt="image" src="https://user-images.githubusercontent.com/93026020/192078545-79d70b90-7e9d-4b85-9f8b-9d7548a4c5a4.png">
- 6. Use the slope m and the y -intercept to form the equation of the line.
- 7. Obtain the straight line equation Y=mX+b and plot the scatterplot.
- 8. Stop
+5. Use the slope m and the y -intercept to form the equation of the line.
+6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
 ```
-Developed by
-Name :Gokul sachin
-Reg no: 212223220025
-```
-```
+/*
+Program to implement univariate Linear Regression to fit a straight line using least squares.
+Developed by: Ashwath p
+RegisterNumber:  212224220012
+*/
 import numpy as np
+
 import matplotlib.pyplot as plt
-X = np.array(eval(input()))
-Y = np.array(eval(input()))
-X_mean = np.mean(X)
-Y_mean = np.mean(Y)
-num = 0
-denom=0
+
+X=np.array(eval(input()))
+
+Y=np.array (eval (input()))
+
+Xmean=np.mean(X)
+
+Ymean=np.mean(Y)
+
+num, den=0,0 # num numerator, den denomenator
+
 for i in range(len(X)):
-  num+=(X[i] - X_mean)*(Y[i]-Y_mean)
-  denom+=(X[i]-X_mean)**2
-m = num/denom
-b = Y_mean - m*X_mean
-print(m,b)
-y_predicted = m*X + b
-print(y_predicted)
+
+  num+=(X[i]-Xmean)*(Y[i]-Ymean)
+
+  den+=(X[i]-Xmean)**2
+
+m=num/den
+
+c=Ymean-m*Xmean
+
+print(m,c)
+
+Y_pred=m*X+c
+
+print(Y_pred)
+
 plt.scatter(X,Y)
-plt.plot(X,y_predicted,color='red')
+
+plt.plot(X,Y_pred,color="red")
+
 plt.show()
 ```
 
 ## Output:
-![image](https://github.com/arbasil05/Find-the-best-fit-line-using-Least-Squares-Method/assets/144218037/83c08f4e-65b2-4cc7-b1d5-b778dee55012)
+
+<img width="976" height="656" alt="image" src="https://github.com/user-attachments/assets/518b159a-4575-41c4-b9fc-a0b3f5dbc684" />
 
 
 ## Result:
